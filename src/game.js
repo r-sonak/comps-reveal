@@ -62,13 +62,9 @@ export class Game {
     
     // Input state
     this.isWaitingForInput = false;
-    this.touchStartX = 0;
-    this.touchStartY = 0;
     
     // Bind methods
     this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.handleTouchStart = this.handleTouchStart.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
     this.checkCollisions = this.checkCollisions.bind(this);
   }
   
@@ -144,10 +140,6 @@ export class Game {
     
     // Add keyboard listener
     window.addEventListener('keydown', this.handleKeyPress);
-    
-    // Add touch listeners
-    document.addEventListener('touchstart', this.handleTouchStart, { passive: false });
-    document.addEventListener('touchend', this.handleTouchEnd, { passive: false });
     
     // Start game loop
     this.startGameLoop();
@@ -480,8 +472,6 @@ export class Game {
     
     // Remove keyboard listener
     window.removeEventListener('keydown', this.handleKeyPress);
-    document.removeEventListener('touchstart', this.handleTouchStart);
-    document.removeEventListener('touchend', this.handleTouchEnd);
     
     // Update playthrough count
     const playthroughs = parseInt(localStorage.getItem('playthroughs') || '0');
