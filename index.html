@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competition Road Game</title>
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen active">
+      <h1>LETS GO TEAM COMP TIMEEEEEE</h1>
+      <button id="play-button" class="btn-primary">Play</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <!-- Header with Score -->
+      <div id="header">
+        <div id="score-display">Score: <span id="score">0</span></div>
+      </div>
+
+      <!-- Game Canvas -->
+      <div id="game-container">
+        <div id="game-grid"></div>
+      </div>
+
+      <!-- Competition Reveal Section -->
+      <div id="competition-section">
+        <h3>Upcoming Competitions</h3>
+        <div id="competition-cards"></div>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="game-over-modal" class="modal">
+      <div class="modal-content">
+        <h2>Game Over!</h2>
+        <p>Final Score: <span id="final-score">0</span></p>
+        <button id="play-again-button" class="btn-primary">Play Again</button>
+      </div>
+    </div>
+
+    <!-- Competition Reveal Modal -->
+    <div id="reveal-modal" class="modal">
+      <div class="modal-content reveal-content">
+        <h2>NEXT COMP!!!!</h2>
+        <h3 id="reveal-name">Name</h3>
+        <p id="reveal-city">City</p>
+        <p id="reveal-host">Host</p>
+        <p id="reveal-date">Date</p>
+        <div class="continue-hint">Press any key to continue...</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+
